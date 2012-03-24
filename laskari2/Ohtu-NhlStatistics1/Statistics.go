@@ -35,12 +35,13 @@ func (s *Statistics) Team(teamName string) []*Player {
 func (s *Statistics) TopScorers(howMany int) []*Player {
 	sort.Sort(Playerslice(s.players))
 
-	topScorers := make([]*Player, 0, howMany)
-	var players []*Player
+	var players, topScorers []*Player
 
 	if howMany > len(s.players) {
+		topScorers = make([]*Player, 0, len(s.players))
 		players = s.players
 	} else {
+		topScorers = make([]*Player, 0, howMany)
 		players = s.players[:howMany]
 	}
 	for _, player := range players {
