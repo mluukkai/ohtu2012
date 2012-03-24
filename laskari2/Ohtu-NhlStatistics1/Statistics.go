@@ -9,12 +9,8 @@ type Statistics struct {
 	players []*Player
 }
 
-func NewStatistics() (*Statistics, error) {
-	reader, err := NewPlayerReader("http://nhlstatistics.herokuapp.com/players.txt")
-	if err != nil {
-		return nil, err
-	}
-	return &Statistics{players: reader.Players()}, err
+func NewStatistics(reader Reader) *Statistics {
+	return &Statistics{players: reader.Players()}
 }
 
 func (s *Statistics) Search(name string) *Player {

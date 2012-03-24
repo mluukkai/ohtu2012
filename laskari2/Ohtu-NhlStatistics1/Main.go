@@ -4,8 +4,18 @@ import (
 	"fmt"
 )
 
+type Reader interface {
+	Players() []*Player
+}
+
 func main() {
-	stats, _ := NewStatistics()
+	reader, err := NewPlayerReader("http://nhlstatistics.herokuapp.com/players.txt")
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	stats := NewStatistics(reader)
 	fmt.Println("Philadelphia Flyers")
 	for _, player := range stats.Team("PHI") {
 		fmt.Println(player)
