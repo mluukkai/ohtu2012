@@ -1,24 +1,14 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ohtu.verkkokauppa;
 
-public class Viitegeneraattori {
-
-    private static Viitegeneraattori instanssi;
-
-    public static Viitegeneraattori getInstance() {
-        if (instanssi == null) {
-            instanssi = new Viitegeneraattori();
-        }
-
-        return instanssi;
-    }
+/**
+ *
+ * @author Noemj
+ */
+public interface Viitegeneraattori {
+    public int uusi();
     
-    private int seuraava;
-    
-    private Viitegeneraattori(){
-        seuraava = 1;    
-    }
-    
-    public int uusi(){
-        return seuraava++;
-    }
 }
