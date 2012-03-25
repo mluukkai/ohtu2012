@@ -10,5 +10,25 @@
 
     <context:annotation-config />
     <context:component-scan base-package="ohtu.verkkokauppa" />
+    <!-- Kauppa -->
+    <bean id="Kauppa" class="ohtu.verkkokauppa.Kauppa">
+        <constructor-arg ref="Varasto_Espoo"/>
+        <constructor-arg ref="Pankki_Nordea"/>
+        <constructor-arg ref="ViitegeneraattoriDeluxe"/>
+    </bean>
+    <!-- Kirjanpito -->
+    <bean id="Varasto_Espoo" class="ohtu.verkkokauppa.Varasto_Espoo">
+        <constructor-arg ref="Kirjanpito_laMaestro"/>
+    </bean>
+    <!-- Viitegeneraattori -->
+    <bean id="Pankki_Nordea" class="ohtu.verkkokauppa.Pankki_Nordea">
+        <constructor-arg ref="Kirjanpito_laMaestro"/>
+    </bean>
+    <!-- Pankki -->
+    <bean id="ViitegeneraattoriDeluxe" class="ohtu.verkkokauppa.ViitegeneraattoriDeluxe">
+    </bean>
+    <!-- Varasto -->
+    <bean id="Kirjanpito_laMaestro" class="ohtu.verkkokauppa.Kirjanpito_laMaestro">
+    </bean>
 
 </beans>

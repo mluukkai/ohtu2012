@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
 public class Ostoskori {
 
     private ArrayList<Tuote> tuotteet;

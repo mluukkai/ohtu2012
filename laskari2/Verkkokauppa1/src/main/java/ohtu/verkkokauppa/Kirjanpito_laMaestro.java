@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 
 
-@Component
+
 public class Kirjanpito_laMaestro implements Kirjanpito {
 
     private ArrayList<String> tapahtumat;

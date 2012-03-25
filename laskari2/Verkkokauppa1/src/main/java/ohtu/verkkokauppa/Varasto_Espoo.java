@@ -13,13 +13,12 @@ import java.util.HashMap;
  * To change this template use File | Settings | File Templates.
  */
 
-@Component
+
 public class Varasto_Espoo implements Varasto{
 
     private Kirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;
 
-    @Autowired
     public Varasto_Espoo(Kirjanpito kirjanpito) {
         this.kirjanpito = kirjanpito;
         saldot = new HashMap<Tuote, Integer>();

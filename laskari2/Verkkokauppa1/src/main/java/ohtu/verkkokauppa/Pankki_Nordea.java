@@ -12,12 +12,10 @@ import org.springframework.stereotype.Component;
  */
 
 
-@Component
 public class Pankki_Nordea implements Pankki {
 
     private Kirjanpito kirjanpito;
 
-    @Autowired
     public Pankki_Nordea(Kirjanpito kirjanpito) {
         this.kirjanpito = kirjanpito;
     }
