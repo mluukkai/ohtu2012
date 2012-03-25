@@ -32,7 +32,7 @@ public class PlayerReader implements Reader {
         return players;
     }
 
-    public int extractInt(String str) {
+    private int extractInt(String str) {
         return Integer.parseInt(str.trim());
     }
 }
